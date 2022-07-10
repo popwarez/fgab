@@ -1,0 +1,38 @@
+[
+    {
+        "name": "Boss1",
+        "str": "10",
+        "pos": 1
+    },
+    {
+        "name": "Boss2",
+        "str": "10",
+        "pos": 2
+    },
+    {
+        "name": "Boss3",
+        "str": "10",
+        "pos": 3
+    },
+    {
+        "name": "Boss4",
+        "str": "10",
+        "pos": 4
+    },
+    {
+        "name": "Boss5",
+        "str": "10",
+        "pos": 5
+    },
+    {
+        "name": "Boss6",
+        "str": "10",
+        "pos": 6
+    },
+    {
+        "name": "Boss7",
+        "str": "10",
+        "pos": 7
+    }
+    
+]

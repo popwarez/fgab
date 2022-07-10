@@ -1,0 +1,22 @@
+[
+    {
+        "name": "Legolas",
+        "str": "10",
+        "pos": 1
+    },
+    {
+        "name": "Gimli",
+        "str": "10",
+        "pos": 3
+    },
+    {
+        "name": "Aragon",
+        "str": "10",
+        "pos": 5
+    },
+    {
+        "name": "Frodo",
+        "str": "10",
+        "pos": 6
+    }
+]
