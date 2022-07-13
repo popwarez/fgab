@@ -16,9 +16,8 @@
   </div>
 </template>
 <script setup lang="ts">
-import mockCharacters from "@/public/mockCharacters";
 import mockBosses from "@/public/mockBosses";
-const characters = mockCharacters;
+const { characters } = useCharacters();
 const bosses = mockBosses;
 </script>
 
@@ -44,7 +43,7 @@ const bosses = mockBosses;
     height: 100%;
     box-sizing: border-box;
     grid-row-gap: 20px;
-    background: rgb(105, 103, 115);
+    background: var(--gray);
     padding: 20px;
 
     .char {
@@ -55,9 +54,9 @@ const bosses = mockBosses;
       height: 100%;
       color: #000;
       box-sizing: border-box;
-      background: rgb(52, 0, 104);
+      background: var(--purple);
       border-radius: 20px;
-      border: 10px solid rgb(226, 132, 19);
+      border: 10px solid var(--gold);
       color: #fff;
       width: 100%;
     }
@@ -70,7 +69,7 @@ const bosses = mockBosses;
       justify-self: center;
       width: 100%;
       height: 100%;
-      background: rgb(255, 105, 120);
+      background: var(--red);
       border-radius: 20px;
     }
   }

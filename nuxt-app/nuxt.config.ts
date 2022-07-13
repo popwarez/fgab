@@ -5,6 +5,10 @@ export default defineNuxtConfig({
     typescript: {
         shim: false
       },
-
-      css: ['@/assets/styles/main.scss']
+    css: ['@/assets/styles/main.scss'],
+    modules: ['@nuxtjs/supabase'],
+    supabase: {
+      url: process.env.SUPABASE_URL,
+      key: process.env.SUPABASE_KEY
+    }
 })
