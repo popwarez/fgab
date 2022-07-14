@@ -1,7 +1,11 @@
 <template>
   <div class="map">
     <div v-for="(char, index) in characters" :key="index" class="lane">
-      <div class="char" :style="`grid-row: ${char.pos}`" v-if="char.pos > 0">
+      <div
+        class="char"
+        :style="`grid-row: ${char.position}`"
+        v-if="char.position > 0"
+      >
         {{ char.name }}
       </div>
       <div
@@ -10,7 +14,7 @@
         class="boss"
         :style="`grid-row: ${boss.pos}`"
       >
-        <span v-if="boss.pos !== char.pos">{{ boss.name }}</span>
+        <span v-if="boss.pos !== char.position">{{ boss.name }}</span>
       </div>
     </div>
   </div>

@@ -2,7 +2,15 @@
   <div class="gm-overview">
     <div v-for="(char, index) in characters" :key="index" class="char">
       <h1>{{ char.name }}</h1>
-      <h3>{{ char.strength }}</h3>
+      <div>
+        <h1 @click="updateCharacterStrength((char.strength -= 5), char.name)">
+          --
+        </h1>
+        <h3>{{ char.strength }}</h3>
+        <h1 @click="updateCharacterStrength((char.strength += 5), char.name)">
+          ++
+        </h1>
+      </div>
       <button @click="deleteCharacter(char.name)">delete</button>
     </div>
     <div class="char-input">
@@ -24,7 +32,12 @@
 <script setup lang="ts">
 const characterName = ref<string>("");
 const characterStrength = ref<number>(0);
-const { characters, createCharacter, deleteCharacter } = useCharacters();
+const {
+  characters,
+  createCharacter,
+  deleteCharacter,
+  updateCharacterStrength,
+} = useCharacters();
 </script>
 
 <style lang="scss" scoped>
@@ -34,6 +47,8 @@ const { characters, createCharacter, deleteCharacter } = useCharacters();
   grid-auto-rows: auto;
   grid-gap: 10px;
   width: 100vw;
+  padding: 20px;
+  box-sizing: border-box;
 
   .char-input {
     display: flex;
