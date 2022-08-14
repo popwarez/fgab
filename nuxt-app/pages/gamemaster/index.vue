@@ -11,6 +11,7 @@
           ++
         </h1>
       </div>
+      <button @click="fightBossEvent(char)">FIGHT!!!!</button>
       <button @click="deleteCharacter(char.name)">delete</button>
     </div>
     <div class="char-input">
@@ -37,7 +38,29 @@ const {
   createCharacter,
   deleteCharacter,
   updateCharacterStrength,
+  updateCharacterPosition,
 } = useCharacters();
+
+const { bosses } = useBosses();
+console.log(bosses.value.length);
+
+const { fightBoss, setShowWinMessage, setWinner } = useGameLogic();
+
+const fightBossEvent = async (character) => {
+  const nextCharPosition = character.position + 1;
+  const nextBoss = bosses.value.find(
+    (boss) => boss.position === nextCharPosition
+  );
+  if (nextBoss) {
+    if (fightBoss(character, nextBoss)) {
+      await updateCharacterPosition(nextCharPosition, character.name);
+    }
+  } else {
+    console.log("win");
+    setShowWinMessage(true);
+    setWinner(character.name);
+  }
+};
 </script>
 
 <style lang="scss" scoped>
